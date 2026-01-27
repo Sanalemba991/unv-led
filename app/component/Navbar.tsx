@@ -18,10 +18,10 @@ export default function Navbar() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
+    { href: '/solution', label: 'Solution' },
     { href: '/products', label: 'Products' },
-    { href: '/certificates', label: 'Certificates' },
-    { href: '/gallery', label: 'Gallery' },
+    { href: '/partner', label: 'Partner' },
+  
   ];
 
   const isActive = (href) => pathname === href;
@@ -45,23 +45,18 @@ export default function Navbar() {
             href="/" 
             className="flex items-center gap-2 flex-shrink-0 group"
           >
-            <div
-              className={`rounded-lg flex items-center justify-center transition-all duration-500 ${
-                scrolled
-                  ? 'w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700'
-                  : 'w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600'
-              }`}
-            >
-              <span className="text-white font-bold text-sm">U</span>
-            </div>
+           
             <div className={`hidden sm:block transition-all duration-500`}>
-              <p className={`font-bold transition-all duration-300 ${
-                scrolled 
-                  ? 'text-sm text-white' 
-                  : 'text-base text-gray-900'
-              }`}>
-               UNV LED
-              </p>
+              <img 
+                src="/logo.png" 
+                alt="UNV LED Logo" 
+                className={`transition-all duration-300 ${
+                  scrolled 
+                    ? 'h-5' 
+                    : 'h-7'
+                }`} 
+                style={{ objectFit: 'contain' }}
+              />
             </div>
           </Link>
 
@@ -116,9 +111,9 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`hidden md:inline-block font-semibold rounded-lg transition-all duration-300 whitespace-nowrap ${
+              className={`hidden md:inline-block font-semibold  transition-all duration-300 whitespace-nowrap ${
                 scrolled 
-                  ? 'px-5 py-2 text-sm border border-white/20 text-white hover:bg-white/10 hover:border-white/40'
+                  ? 'px-5 py-2 text-sm border border-white text-white hover:bg-white/100 hover:text-black hover:border-white/40'
                   : 'px-6 py-2 text-sm border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
               }`}
             >

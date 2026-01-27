@@ -1,10 +1,8 @@
-import About from "../component/About";
-
-
+import PartnerPage from './Partner';
 export default function Page() {
   return (
     <>
-<About/>
+<PartnerPage />
     </>
   );
 }

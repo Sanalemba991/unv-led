@@ -1,10 +1,10 @@
-import About from "../component/About";
 
+import Contact from "../component/Contact";
 
 export default function Page() {
   return (
     <>
-<About/>
+<Contact/>
     </>
   );
 }

@@ -1,17 +1,14 @@
 import Image from "next/image";
-import Banner from "./components/Banner";
-import CateringHero from "./components/CateringHero";
-import Sol from "./components/Sol";
-import Testimonial from "./components/Testimonal";
-import Navbar from "./components/Navbar";
+import Banner from "./component/Banner";
+import CateringHero from "./component/CateringHero";
+import Sol from "./component/Sol";
+import Testimonial from "./component/Testimonal";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Banner />
       <CateringHero />
-
       <Sol />
       <Testimonial />
     </>
