@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useScroll, useTransform, useSpring } from "framer-motion";
-
+import { Variants } from "framer-motion";
 export default function Solution() {
   const bannerRef = useRef(null);
   const heroRef = useRef(null);
@@ -43,7 +43,7 @@ export default function Solution() {
   const springScale = useSpring(scale, { stiffness: 300, damping: 30 });
 
   // Enhanced animation variants
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { 
       y: 60, 
       opacity: 0,
@@ -60,7 +60,7 @@ export default function Solution() {
     },
   };
 
-  const staggerContainerVariants = {
+  const staggerContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -72,7 +72,7 @@ export default function Solution() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { 
       y: 30, 
       opacity: 0,
@@ -89,7 +89,7 @@ export default function Solution() {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { 
       scale: 0.8, 
       opacity: 0,
@@ -106,7 +106,7 @@ export default function Solution() {
     },
   };
 
-  const leftSlideVariants = {
+  const leftSlideVariants: Variants = {
     hidden: { 
       x: -100, 
       opacity: 0,
@@ -123,7 +123,7 @@ export default function Solution() {
     },
   };
 
-  const rightSlideVariants = {
+  const rightSlideVariants: Variants = {
     hidden: { 
       x: 100, 
       opacity: 0,
@@ -140,7 +140,7 @@ export default function Solution() {
     },
   };
 
-  const scaleInVariants = {
+  const scaleInVariants: Variants = {
     hidden: { 
       scale: 0.8, 
       opacity: 0,
@@ -157,7 +157,7 @@ export default function Solution() {
     },
   };
 
-  const bannerTextVariants = {
+  const bannerTextVariants: Variants = {
     hidden: { 
       y: 100, 
       opacity: 0,
@@ -169,19 +169,19 @@ export default function Solution() {
       skewY: 0,
       transition: {
         duration: 1.2,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
         delay: 0.2
       },
     },
   };
 
-  const serviceCardVariants = {
+  const serviceCardVariants: Variants = {
     hidden: { 
       y: 50, 
       opacity: 0,
       rotateX: 15
     },
-    visible: (i) => ({
+    visible: (i: number) => ({
       y: 0,
       opacity: 1,
       rotateX: 0,
@@ -199,15 +199,15 @@ export default function Solution() {
         ease: [0.22, 1, 0.36, 1],
       }
     }
-  };
+  }; 
 
-  const statsVariants = {
+  const statsVariants: Variants = {
     hidden: { 
       scale: 0.5, 
       opacity: 0,
       rotateZ: -10
     },
-    visible: (i) => ({
+    visible: (i: number) => ({
       scale: 1,
       opacity: 1,
       rotateZ: 0,
@@ -217,7 +217,7 @@ export default function Solution() {
         delay: 0.5 + i * 0.1
       }
     }),
-  };
+  }; 
 
   return (
     <div ref={containerRef} className="min-h-screen bg-white">
@@ -461,7 +461,7 @@ export default function Solution() {
                     className="absolute bottom-0 left-0 right-0 p-4 z-20"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ delay: 0.8, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                   >
                     <p className="text-white text-sm font-semibold mb-1">
                       Trusted by Industry Leaders
@@ -498,7 +498,7 @@ export default function Solution() {
                 className="h-1 w-20 bg-black rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: "5rem" }}
-                transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
               ></motion.div>
             </motion.div>
 
@@ -508,7 +508,7 @@ export default function Solution() {
                   className="text-gray-700 leading-relaxed text-base"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: 0.6, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                 >
                   With AERO, you get state-of-the-art technology for commercial
                   display solutions. Our commitment to innovation combines
@@ -519,7 +519,7 @@ export default function Solution() {
                   className="text-gray-700 leading-relaxed text-base"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: 0.7, duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                 >
                   From innovative development to world-class manufacturing and
                   after-sales service, every aspect champions quality,

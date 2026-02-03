@@ -24,7 +24,7 @@ export default function Navbar() {
   
   ];
 
-  const isActive = (href) => pathname === href;
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav

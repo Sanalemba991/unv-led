@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
+import { Variants } from "framer-motion";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -54,7 +54,7 @@ export default function Contact() {
     }
   };
 
-  const slideInRight = {
+  const slideInRight: Variants = {
     hidden: { opacity: 0, x: 60 },
     visible: { 
       opacity: 1, 
@@ -66,7 +66,7 @@ export default function Contact() {
     }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -79,7 +79,7 @@ export default function Contact() {
     }
   };
 
-  const staggerItem = {
+  const staggerItem: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -91,7 +91,7 @@ export default function Contact() {
     }
   };
 
-  const zoomIn = {
+  const zoomIn: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { 
       opacity: 1, 
@@ -104,7 +104,7 @@ export default function Contact() {
   };
 
   // Enhanced hero title animation
-  const heroTitleVariants = {
+  const heroTitleVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -115,7 +115,7 @@ export default function Contact() {
     }
   };
 
-  const heroWordVariants = {
+  const heroWordVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 50,
@@ -134,7 +134,7 @@ export default function Contact() {
     }
   };
 
-  const heroLetterVariants = {
+  const heroLetterVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 50,
@@ -153,7 +153,7 @@ export default function Contact() {
     }
   };
 
-  const heroSubtitleVariants = {
+  const heroSubtitleVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 30,

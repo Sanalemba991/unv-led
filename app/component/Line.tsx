@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation, AnimatePresence } from "framer-motion";
-
+import { Variants } from "framer-motion";
 export default function Line() {
   const containerRef = useRef(null);
   const [animatedIcons, setAnimatedIcons] = useState([]);
@@ -67,7 +67,7 @@ export default function Line() {
   ];
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -78,7 +78,7 @@ export default function Line() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 30,
@@ -99,7 +99,7 @@ export default function Line() {
 
 
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { 
       width: 0,
       opacity: 0 
@@ -115,7 +115,7 @@ export default function Line() {
     }
   };
 
-  const verticalLineVariants = {
+  const verticalLineVariants: Variants = {
     hidden: { 
       height: 0,
       opacity: 0 
@@ -131,7 +131,7 @@ export default function Line() {
     }
   };
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { 
       opacity: 0, 
       x: -30 
@@ -148,7 +148,7 @@ export default function Line() {
     }
   };
 
-  const contentRightVariants = {
+  const contentRightVariants: Variants = {
     hidden: { 
       opacity: 0, 
       x: 30 

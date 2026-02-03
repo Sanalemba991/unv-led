@@ -1,7 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react"; 
-
+import { Variants } from "framer-motion";
 export default function CateringHero() {
   const galleryImages = [
     { id: 1, src: "https://images.unsplash.com/photo-1766476225135-a75261e6ad47?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Catering food display" },
@@ -19,17 +19,17 @@ export default function CateringHero() {
   const isGalleryInView = useInView(galleryRef, { once: true, amount: 0.2 });
 
   // Animation variants
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
-  const fadeInRight = {
+  const fadeInRight: Variants = {
     hidden: { opacity: 0, x: 30 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -40,7 +40,7 @@ export default function CateringHero() {
     }
   };
 
-  const imageVariants = (index) => {
+  const imageVariants: (index: number) => Variants = (index: number) => {
     // Different origins for the spread effect
     const origins = [
       { x: -100, y: -100 },

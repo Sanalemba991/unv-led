@@ -46,7 +46,7 @@ const PartnerPage = () => {
           const cards = entry.target.querySelectorAll(".benefit-card-animate");
           cards.forEach((card, index) => {
             setTimeout(() => {
-              card.style.transitionDelay = `${0.8 + index * 0.3}s`;
+              (card as HTMLElement).style.transitionDelay = `${0.8 + index * 0.3}s`;
             }, 100);
           });
 
@@ -68,7 +68,7 @@ const PartnerPage = () => {
             );
             cards.forEach((card, index) => {
               setTimeout(() => {
-                card.style.transitionDelay = `${0.5 + index * 0.4}s`;
+                (card as HTMLElement).style.transitionDelay = `${0.5 + index * 0.4}s`;
               }, 200);
             });
 

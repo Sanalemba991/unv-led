@@ -9,7 +9,7 @@ import {
   Grid3x3,
 } from "lucide-react";
 import { motion, useInView } from "framer-motion";
-
+import { Variants } from "framer-motion";
 export default function Airport() {
   // Refs for animation sections
   const heroRef = useRef(null);
@@ -31,34 +31,34 @@ export default function Airport() {
   const hrInView = useInView(hrRef, { once: true, margin: "-100px" });
 
   // Animation variants
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
-  };
+  }; 
 
-  const fadeInLeft = {
+  const fadeInLeft: Variants = {
     hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
-  };
+  }; 
 
-  const fadeInRight = {
+  const fadeInRight: Variants = {
     hidden: { opacity: 0, x: 30 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
-  };
+  }; 
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -68,17 +68,17 @@ export default function Airport() {
     },
   };
 
-  const staggerItem = {
+  const staggerItem: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     },
-  };
+  }; 
 
   // Hero section specific animations
-  const heroTitle = {
+  const heroTitle: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -90,7 +90,7 @@ export default function Airport() {
     },
   };
 
-  const heroContent = {
+  const heroContent: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -103,7 +103,7 @@ export default function Airport() {
     },
   };
 
-  const heroImage = {
+  const heroImage: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -116,7 +116,7 @@ export default function Airport() {
     },
   };
 
-  const paragraphStagger = {
+  const paragraphStagger: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -127,43 +127,43 @@ export default function Airport() {
     },
   };
 
-  const paragraphItem = {
+  const paragraphItem: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
-  };
+  }; 
 
   // HR Section specific animations
-  const hrImageVariants = {
+  const hrImageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.6,
         delay: 0.1 * i,
-        ease: "easeOut",
+        ease: [0.25, 0.1, 0.25, 1],
       },
     }),
   };
 
-  const hrContentVariants = {
+  const hrContentVariants: Variants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
-  };
+  }; 
 
   return (
     <div className=" bg-white text-black">

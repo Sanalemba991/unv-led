@@ -1,9 +1,8 @@
 "use client";
-
+import { Variants } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-
 const services = [
   {
     id: 1,
@@ -83,7 +82,7 @@ export default function Sol() {
     if (visibleServices.length > 0 && currentIndex >= visibleServices.length) {
       setCurrentIndex(0);
     }
-  }, [removedItems, currentIndex, visibleServices.length]);
+  }, [removedItems, visibleServices.length]);
 
   const nextSlide = () => {
     if (visibleServices.length <= 1) return;
@@ -120,7 +119,7 @@ export default function Sol() {
     setSelectedItem(null);
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 120, scale: 0.85 },
     visible: {
       opacity: 1,
@@ -137,11 +136,11 @@ export default function Sol() {
       opacity: 0,
       y: 120,
       scale: 0.9,
-      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 80, rotateX: 15 },
     visible: {
       opacity: 1,
@@ -160,7 +159,7 @@ export default function Sol() {
     },
   };
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: 60, scale: 0.95 },
     visible: (delay: number) => ({
       opacity: 1,
@@ -174,7 +173,7 @@ export default function Sol() {
     }),
   };
 
-  const cardContentVariants = {
+  const cardContentVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: (delay: number) => ({
       opacity: 1,
@@ -187,7 +186,7 @@ export default function Sol() {
     }),
   };
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { opacity: 0, y: 80, rotateY: -10 },
     visible: (i: number) => ({
       opacity: 1,
