@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef } from "react"; 
 
 export default function CateringHero() {
   const galleryImages = [
@@ -13,8 +13,6 @@ export default function CateringHero() {
     { id: 7, src: "https://plus.unsplash.com/premium_photo-1674406763863-b64be22c78a9?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Event catering" },
     { id: 8, src: "https://images.unsplash.com/photo-1451481454041-104482d8e284?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Professional service" },
   ];
-
-  // Refs for tracking when elements come into view
   const heroRef = useRef(null);
   const galleryRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.2 });
@@ -109,7 +107,7 @@ export default function CateringHero() {
 
           {/* Description and Buttons - Right Aligned */}
           <motion.div 
-            className="flex justify-end"
+            className="flex justify-end" 
             initial="hidden"
             animate={isHeroInView ? "visible" : "hidden"}
             variants={fadeInRight}
